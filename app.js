@@ -8,6 +8,9 @@ const AuthRoutes = require('./routes/Auth.route')
 
 const app = express()
 app.use(morgan('dev'))
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
 const PORT = process.env.PORT || 3000
 
 app.get('/', async (req, res, next)=>{
